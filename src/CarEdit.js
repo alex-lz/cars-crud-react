@@ -27,7 +27,7 @@ class CarEdit extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     if (this.props.match.params.id !== 'new') {
       axios.get(apiUrl + `/api/v1/cars/${this.props.match.params.id}`).then(response => response.data).then(
         (result)=>{
@@ -49,7 +49,7 @@ class CarEdit extends Component {
     this.setState({item});
   }
 
-  async handleSubmit(event) {
+  handleSubmit(event) {
     event.preventDefault();
     const {item} = this.state;
     axios({

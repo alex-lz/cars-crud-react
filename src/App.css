@@ -32,6 +32,28 @@
   margin-top: 20px;
 }  
 
+.loader {
+  position: absolute;
+  margin: auto;
+  border: 2vmin solid #f3f3f3; /* Light grey */
+  border-top: 2vmin solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 12vmin;
+  height: 12vmin;
+  animation: spin 1s linear infinite;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

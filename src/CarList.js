@@ -34,7 +34,23 @@ componentDidMount(){
     )
 }
 
-  async remove(id) {
+componentWillUnmount() {
+  this.setState({isLoading: true});
+
+  axios.get(apiUrl + '/api/v1/cars').then(response => response.data).then(
+       (result)=>{
+           this.setState({
+               cars:result, isLoading: false
+           });
+       },
+       (error)=>{
+           this.setState({error});
+       }
+   )
+
+}
+
+  remove(id) {
     const { cars } = this.state;
     axios.delete(apiUrl + '/api/v1/cars/' + id).then(result=>{
        this.setState({
@@ -48,7 +64,7 @@ componentDidMount(){
     const {cars, isLoading} = this.state;
 
     if (isLoading) {
-      return <p>Loading...</p>;
+      return <div className="loader"></div>;
     }
 
     const carList = cars.map(car => {
