@@ -95,15 +95,15 @@ componentWillUnmount() {
             <Button color="success" tag={Link} to="/cars/new">Add Car</Button>
           </div>
           <h3>Cars list</h3>
-          <Table className="mt-4">
-            <thead>
+          <Table className="table table-hover">
+            <thead className="bg-light">
             <tr>
               <th width="15%">Brand</th>
               <th width="15%">Name</th>
               <th width="15%">Model</th>
               <th width="15%">Year</th>
               <th width="15%">Price</th>
-              <th width="20%">Actions</th>
+              <th width="10%">Actions</th>
             </tr>
             </thead>
             <tbody>
